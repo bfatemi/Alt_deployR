@@ -46,21 +46,7 @@ echo
 echo
 echo
 echo
-read -p "...Dependencies installed... Press enter set JAVA_HOME"
-clear
-
-########################################################################
-# Set JAVA_HOME
-########################################################################
-
-read -p "continue" tmp
-update-alternatives --config java
-
-read -p "...Java Installed... Enter JAVA_HOME: " jhome
-printf "%s\n" "export JAVA_HOME=$jhome" >> ~/.bashrc
-source ~/.bashrc
-
-read -p "JAVA_HOME set to: $JAVA_HOME\nPress enter to install R and MLK..." tmp
+read -p "...Dependencies installed... Press enter to install RRO and MLK"
 clear
 
 ########################################################################
@@ -112,3 +98,15 @@ clear
 R
 exit 0
 
+########################################################################
+# Set JAVA_HOME
+########################################################################
+
+#update-alternatives --config java
+
+#read -p "Enter JAVA_HOME: " jhome
+#printf "%s\n" "export JAVA_HOME=$jhome" >> ~/.bashrc
+#source ~/.bashrc
+
+#read -p "JAVA_HOME set to: $JAVA_HOME\nPress enter to install R and MLK..." tmp
+#clear
