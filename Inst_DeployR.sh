@@ -23,7 +23,6 @@ mkdir $dl_dir
 
 #read -p "Exit here and check to make sure $dl_dir has been created" tmp
 
-
 pushd $dl_dir
 curl $deployR | tar xz | pv -tpe -N "Downloading DeployR" > /dev/null
 pushd installFiles

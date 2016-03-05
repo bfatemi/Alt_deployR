@@ -1,7 +1,6 @@
 clean(){
-        apt-get --yes update
+        #apt-get -f install
         apt-get --yes upgrade
-        apt-get -f install
         apt-get --yes clean
 }
 
@@ -13,6 +12,8 @@ install(){
 # Build Essentials
 ########################################################################
 
+
+apt-get --yes update
 clean
 
 install curl
@@ -23,14 +24,9 @@ install libpcre3-dev
 install liblzma-dev
 install zlib1g-dev
 
-#sudo apt-get --yes install curl
-#sudo apt-get --yes install build-essential
-#sudo apt-get --yes install liblzma-dev
-#sudo apt-get --yes install libcurl4-openssl-dev
-#sudo apt-get --yes install libpcre3-dev
-#sudo apt-get --yes install liblzma-dev
-#sudo apt-get --yes install zlib1g-dev
-
+echo
+echo
+echo
 echo
 read -p "...Updates and build essentials done... Press enter" tmp
 clear
@@ -39,24 +35,19 @@ clear
 # Install Dependancies
 ########################################################################
 
-read -p "continue" tmp
-
-#sudo apt-get install --yes make gcc gfortran nfs-common
 clean
-
 install make
 install gcc
 install gfortran
 install nfs-common
-
-echo
-read -p "...Dependencies installed... Press enter to install and set JAVA_HOME"
-clear
-
-# install java
 install default-jdk
+
 echo
-#sudo apt-get --yes install default-jdk
+echo
+echo
+echo
+read -p "...Dependencies installed... Press enter set JAVA_HOME"
+clear
 
 ########################################################################
 # Set JAVA_HOME
@@ -75,8 +66,6 @@ clear
 ########################################################################
 # Install RRO
 ########################################################################
-
-clean
 
 RRO_322="https://mran.revolutionanalytics.com/install/RRO-3.2.2-Ubuntu-14.4.x86_64.deb"
 
@@ -98,9 +87,27 @@ pushd RevoMath/
 sudo ./RevoMath.sh
 popd
 
-read -p "...RRO and MLK installed...Press enter to exit and test RRO" tmp
+echo
+echo
+echo
+echo
+read -p "...RRO and MLK installed...Press enter to install deployrRserve" tmp
 clear
 
+########################################################################
+# Install DeployrRserve
+########################################################################
+
+deployrRserve="https://github.com/deployr/deployr-rserve/releases/download/v7.4.2/deployrRserve_7.4.2.tar.gz"
+wget $deployrRserve
+R CMD INSTALL deployrRserve_7.4.2.tar.gz
+
+echo
+echo
+echo
+echo
+read -p "...deployrRserve installed...all dependencies installed...Press enter to exit and test R" tmp
+clear
 #run R
 R
 exit 0
