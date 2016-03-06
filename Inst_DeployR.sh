@@ -26,7 +26,8 @@ mkdir $dl_dir
 pushd $dl_dir
 curl $deployR | tar xz | pv -tpe -N "Downloading DeployR" > /dev/null
 pushd installFiles
-./installDeployROpen.sh
+#./installDeployROpen.sh
+./installDeployROpen.sh --no-ask --nolicense
 popd
 popd
 
