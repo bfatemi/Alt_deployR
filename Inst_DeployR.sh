@@ -27,29 +27,19 @@ pushd $dl_dir
 curl $deployR | tar xz | pv -tpe -N "Downloading DeployR" > /dev/null
 pushd installFiles
 #./installDeployROpen.sh
-./installDeployROpen.sh --no-ask --nolicense
+#sudo /installDeployROpen.sh --no-ask --nolicense
 popd
 popd
 
+#update tomcat7.sh to export JAVA_HOME
+#update properties.sh to export JAVA_HOME
 
-#update groovy before install
-#add JAVA_HOME declaration to installFiles/config/configure.sh
-#update installFiles/properties for JAVA_PATH and JAVA_HOME
-#update java_path in tomcat/tomcat7.sh
+#these programs should not export JAVA_HOME. there should be a link to the latest and these should export that. If I update java in the future, these will export the wrong java anytime I start/stop the server
 
+#investigate why process takes so long to bind to 8006 and 8002
+#"" why groovy looks the way it does
 
-# weird observations:
 
 #after installation, run this:
 #sudo netstat -lpn |grep :80
 
-#to see that mongod is correctly on port 0.0.0.0:8003
-#rserve is correctly here: 0.0.0.0:8004 and here 0.0.0.0:8005
-
-#those two are on tcp
-
-#however, java acts weird. tomcat can start fine and binds to
-#tcp 6 :::8000 this is the java process that starts tomcat
-#the one that stops tomcat doesnt initially bind. it takes a really long time to finally appear here:
-#127.0.0.1:8002
-#the third java process binds here also after a delay :::8006

@@ -28,7 +28,7 @@ echo
 echo
 echo
 echo
-read -p "...Updates and build essentials done... Press enter" tmp
+#read -p "...Updates and build essentials done... Press enter" tmp
 clear
 
 ########################################################################
@@ -46,7 +46,7 @@ echo
 echo
 echo
 echo
-read -p "...Dependencies installed... Press enter to install RRO and MLK"
+#read -p "...Dependencies installed... Press enter to install RRO and MLK"
 clear
 
 ########################################################################
@@ -77,7 +77,7 @@ echo
 echo
 echo
 echo
-read -p "...RRO and MLK installed...Press enter to install deployrRserve" tmp
+#read -p "...RRO and MLK installed...Press enter to install deployrRserve" tmp
 clear
 
 ########################################################################
@@ -92,7 +92,7 @@ echo
 echo
 echo
 echo
-read -p "...deployrRserve installed...all dependencies installed...Press enter to exit and test R" tmp
+#read -p "...deployrRserve installed...all dependencies installed...Press enter to exit and test R" tmp
 clear
 #run R
 R
