@@ -11,10 +11,11 @@ getOption() {
         while [ 1 ]
         do
                 printOptions
-                read ans
+                #read ans
+		ans=1
                 if [ "1" = $ans ] ; then
 					if [ ! "--nolicense" = "$1" ] ; then
-						confirmLicense
+						#confirmLicense
 					fi
                     installMklLibraries
                     break
