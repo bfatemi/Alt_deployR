@@ -104,16 +104,25 @@ start() {
         ##############################
 	out "Starting Rserve and Tomcat. This may take a moment." | tee -a $PWDD/install_log.txt 2>&1
 
-	pushd $INSTALL_FOLDER
+	#pushd $INSTALL_FOLDER
         $INSTALL_FOLDER/tomcat/tomcat7.sh start >> $PWDD/install_log.txt 2>&1
         #cd $INSTALL_FOLDER
         $INSTALL_FOLDER/rserve/rserve.sh start >> $PWDD/install_log.txt 2>&1
-	exitCode=$?
+	#exitCode=$?
 	
 	echo "Installation is complete:" | tee -a $PWDD/install_log.txt 2>&1
 	echo "http://$HOST_NAME:$TOMCAT_PORT/deployr/landing" | tee -a $PWDD/install_log.txt 2>&1
 	echo "Default password for 'admin' and 'testuser' accounts: 'changeme'" | tee -a $PWDD/install_log.txt 2>&1	
-        exitProgram $exitCode
+        #exitProgram $exitCode
+	
+}
+
+set_webcontext() {
+WEBCONTEXT="http://${IP}:$TOMCAT_PORT/deployr"
+$INSTALL_FOLDER/mongo/mongo/bin/mongo deployr -u deployr -p $MONGO_PASSWORD$ --host $HOST --port ${PORT}03 << FOO > /dev/null 2>&1
+db.server.update( {}, {\$set: {webContext: '$WEBCONTEXT'}} )
+exit
+FOO
 }
 
 getMongodbpath() {

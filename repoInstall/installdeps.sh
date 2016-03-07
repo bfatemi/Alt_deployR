@@ -25,11 +25,9 @@ install make
 install gcc
 install gfortran
 install nfs-common
-#install default-jdk
 
 apt-get --yes upgrade
 apt-get --yes clean
-
 
 ########################################################################
 # Install JAVA
@@ -68,7 +66,7 @@ dpkg -i RRO-3.2.2-Ubuntu-14.4.x86_64.deb > /dev/null 2>&1
 
 MLK_322="https://github.com/bfatemi/DeployR/releases/download/v0.2/NinjaQuant-RevoMath322.tar.gz"
 wget $MLK_322
-tar zxvf RevoMath-3.2.2.tar.gz
+tar zxvf NinjaQuant-RevoMath322.tar.gz
 
 pushd RevoMath/
 sudo ./RevoMath.sh
