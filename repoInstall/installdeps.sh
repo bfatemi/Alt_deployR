@@ -38,8 +38,8 @@ apt-get --yes clean
 jdir="/usr/lib/jvm"
 mkdir $jdir
 pushd $jdir
-wget "https://github.com/bfatemi/DeployR/releases/download/v0.2/jre-8u73-linux-x64.gz"
-tar zxvf jre-8u73-linux-x64.gz
+wget "https://github.com/bfatemi/DeployR/releases/download/v0.2/NinjaQuant-jre-8u73-linux-x64.gz"
+tar zxvf NinjaQuant-jre-8u73-linux-x64.gz -C $jdir
 popd
 
 JAVA_HOME="$jdir/jre1.8.0_73"
@@ -68,7 +68,7 @@ dpkg -i RRO-3.2.2-Ubuntu-14.4.x86_64.deb > /dev/null 2>&1
 
 MLK_322="https://github.com/bfatemi/DeployR/releases/download/v0.2/NinjaQuant-RevoMath322.tar.gz"
 wget $MLK_322
-tar zxvf RevoMath-3.2.2.tar.gz
+tar zxvf NinjaQuant-RevoMath322.tar.gz
 
 pushd RevoMath/
 sudo ./RevoMath.sh
