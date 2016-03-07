@@ -10,13 +10,8 @@ ETC_PATH=
 getOption() {
         while [ 1 ]
         do
-                printOptions
-                #read ans
 		ans=1
                 if [ "1" = $ans ] ; then
-					if [ ! "--nolicense" = "$1" ] ; then
-						#confirmLicense
-					fi
                     installMklLibraries
                     break
                 elif [ "2" = $ans ] ; then
