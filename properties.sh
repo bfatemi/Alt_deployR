@@ -3,8 +3,8 @@ TESTING=false
 JAVA_FOUND=false
 JAVA_VERSION_VALID=false
 JAVA_VERSION=
-JAVA_PATH=/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
-JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
+JAVA_PATH=/usr/lib/jvm/jre1.8.0_73/bin/java
+JAVA_HOME=/usr/lib/jvm/jre1.8.0_73
 export JAVA_HOME
 
 RRE_FOUND=false
