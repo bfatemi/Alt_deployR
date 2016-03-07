@@ -1,7 +1,7 @@
 #!/bin/bash
 # description: Tomcat Server basic start/shutdown script
 # processname: tomcat
-JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
+JAVA_HOME=/usr/lib/jvm/jre1.8.0_73/bin/java
 export JAVA_HOME
 
 TOMCAT_HOME=$INSTALL_FOLDER$/tomcat/tomcat7/bin
