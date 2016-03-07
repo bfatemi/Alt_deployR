@@ -66,7 +66,7 @@ dpkg -i RRO-3.2.2-Ubuntu-14.4.x86_64.deb > /dev/null 2>&1
 # Install MLK
 ########################################################################
 
-MLK_322="https://github.com/bfatemi/DeployR/releases/download/v0.2/RevoMath-3.2.2.tar.gz"
+MLK_322="https://github.com/bfatemi/DeployR/releases/download/v0.2/NinjaQuant-RevoMath322.tar.gz"
 wget $MLK_322
 tar zxvf RevoMath-3.2.2.tar.gz
 

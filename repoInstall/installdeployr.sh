@@ -17,18 +17,19 @@ sudo adduser $deployrUser sudo
 # Installing DeployR
 ##################################################################
 
-deployR="https://github.com/bfatemi/DeployR/releases/download/v0.2/NQ_deployR-8.0.0_ubuntu14.04.tar.gz"
+deployR="https://github.com/bfatemi/DeployR/releases/download/v0.2/NinjaQuant-deployr800.tar.gz"
 dl_dir="/home/deployr-user/deployrdownload"
 
 pushd "/home/deployr-user"
 wget $deployR
 mkdir "deployrdownload"
-tar zxvf "NQ_deployR-8.0.0_ubuntu14.04.tar.gz"
+tar zxvf "NinjaQuant-deployr800.tar.gz"
 
-#pushd installFiles
-#sudo /installDeployROpen.sh --no-ask --nolicense
-#popd
-#popd
+pushd installFiles
+sudo /installDeployROpen.sh --no-ask --nolicense
+popd
+
+popd
 
 #update tomcat7.sh to export JAVA_HOME
 #update properties.sh to export JAVA_HOME
